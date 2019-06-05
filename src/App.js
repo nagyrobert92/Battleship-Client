@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+import store from "./store";
+import { Provider } from "react-redux";
+import Routes from "./components/Routes";
+import Landing from "./components/Landing";
 
-export default class App extends Component {
-  state = {};
+class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Setup</h1>
-      </div>
+      <Provider store={store}>
+        <Routes />
+        <Landing />
+      </Provider>
     );
   }
 }
+
+export default App;
